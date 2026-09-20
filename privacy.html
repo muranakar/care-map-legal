@@ -36,7 +36,7 @@
   <tr><th>Android<br>パッケージ名</th><td>com.irodori.medicalcaremap</td></tr>
   <tr><th>iOS<br>Apple ID</th><td>6746599902</td></tr>
   <tr><th>Google Play</th><td><a href="https://play.google.com/store/apps/details?id=com.irodori.medicalcaremap">https://play.google.com/store/apps/details?id=com.irodori.medicalcaremap</a></td></tr>
-  <tr><th>App Store</th><td><a href="https://apps.apple.com/app/6746599902">https://apps.apple.com/app/6746599902</a></td></tr>
+  <tr><th>App Store</th><td><a href="https://apps.apple.com/jp/app/id6746599902">https://apps.apple.com/jp/app/id6746599902</a></td></tr>
   <tr><th>お問い合わせ</th><td><a href="https://forms.gle/BCkjLS5nARp7LGbT7">https://forms.gle/BCkjLS5nARp7LGbT7</a></td></tr>
 </table>
 </div>
@@ -47,7 +47,7 @@
 本アプリは個人（irodori）が開発した<strong>非公式</strong>のアプリです。
 厚生労働省・独立行政法人福祉医療機構・地方自治体その他の公的機関が提供・監修・推奨するものではありません。
 本アプリが収録している施設情報は、これらの機関が公表しているオープンデータを利用したものです
-（詳細は<a href="#opendata">第9項</a>）。
+（詳細は<a href="#opendata">第8項</a>）。
 </p>
 </div>
 
@@ -59,11 +59,11 @@
 <a href="#contact">お問い合わせ</a>で任意に送信された場合を除き、収集しません。
 </p>
 
-<h2 id="on-device">3. 端末の中だけで扱う情報（当方のサーバーへ送信しません）</h2>
+<h2 id="on-device">3. 端末内で扱う情報（当方は受け取りません）</h2>
 
 <p>
-当方は自前のサーバーを保有しておらず、以下の情報が本アプリから当方へ送信されることはありません。
-これらはすべて利用者の端末内にのみ保存されます。
+当方は自前のサーバーを保有していないため、以下の情報が本アプリから当方へ送信されることはありません。
+これらは利用者の端末内で処理・保存されます。
 </p>
 
 <h3>3.1 位置情報</h3>
@@ -77,16 +77,27 @@
   </td></tr>
   <tr><th>取得の可否</th><td>端末の OS が表示する許可ダイアログで、利用者が「許可」を選んだ場合にのみ取得します。許可しない場合も、地図・検索・お気に入りなど本アプリの機能はすべてご利用いただけます（距離表示と近い順の並べ替えのみ使えません）。</td></tr>
   <tr><th>取得の範囲</th><td>アプリを使用している間に限り取得します。バックグラウンドでの継続的な位置追跡は行いません。</td></tr>
-  <tr><th>保存・送信</th><td>距離の計算に用いるためにアプリの実行中にメモリ上で保持するのみで、端末に保存せず、当方および第三者へ送信しません。位置情報の履歴を記録することもありません。</td></tr>
+  <tr><th>保存・送信</th><td>距離の計算に用いるためにアプリの実行中にメモリ上で保持するのみで、端末に保存しません。位置情報の履歴を記録することもありません。<strong>当方が利用者の位置情報を受け取ることはなく、本アプリが位置情報を外部へ送信する処理も行っていません。</strong>ただし、下記のとおり本アプリが組み込んでいる Google の SDK が、独自に位置に関する情報を扱う場合があります。</td></tr>
   <tr><th>許可の取り消し</th><td>端末の「設定」アプリからいつでも取り消せます。</td></tr>
 </table>
 
 <div class="note">
 <p>
-なお、地図そのものの表示には Google の「Maps SDK for Android / Maps SDK for iOS」を利用しています。
-地図の画像を表示するために Google との通信が発生し、その過程で表示中の地図の範囲などが Google に送信されます。
-この通信における Google の取り扱いは
+<strong>本アプリに組み込まれた Google の SDK による位置の扱いについて。</strong>
+</p>
+<ul>
+  <li>地図の表示には Google の「Maps SDK for Android / Maps SDK for iOS」を利用しています。
+    地図の画像を表示するために Google との通信が発生し、その過程で表示中の地図の範囲などが Google に送信されます。
+    また、地図上に現在地を示す機能を有効にしているため、位置情報の利用を許可している場合は、
+    この SDK が端末の位置情報を取得します。</li>
+  <li>広告の配信には Google AdMob を利用しています。位置情報の利用を許可している場合、
+    AdMob の SDK が広告の配信のために位置に関する情報を利用することがあります。
+    また、許可の有無にかかわらず、IP アドレスからおおよその地域（国・都市など）が推定されます。</li>
+</ul>
+<p>
+これらにおける Google の取り扱いは
 <a href="https://policies.google.com/privacy?hl=ja">Google プライバシーポリシー</a>に従います。
+広告のパーソナライズを止める方法は<a href="#rights">第7項</a>をご覧ください。
 </p>
 </div>
 
@@ -127,7 +138,7 @@
     アプリ内で表示された画面の遷移、および次の操作イベント（プレミアムプランの案内が表示された・その案内をタップした・購入手続きを開始した・施設情報を共有した・レビュー依頼が表示された）。
     あわせて、端末の機種・OS のバージョン・言語・国・アプリのバージョン、および Firebase が発行する匿名のアプリインスタンス ID が送信されます。
   </td></tr>
-  <tr><th>送信されない情報</th><td>氏名等の個人情報、位置情報（緯度・経度）、検索キーワード、閲覧した施設の名称、お気に入りの内容は送信していません。</td></tr>
+  <tr><th>送信されない情報</th><td>氏名等の個人情報、端末の位置情報（緯度・経度）、検索キーワード、閲覧した施設の名称、お気に入りの内容は送信していません。ただし、Firebase Analytics の標準の動作として、IP アドレスからおおよその地域（国・都市など）が推定されます。</td></tr>
   <tr><th>利用目的</th><td>どの機能が使われているかを把握し、本アプリを改善するため。</td></tr>
   <tr><th>ポリシー</th><td><a href="https://firebase.google.com/support/privacy?hl=ja">Firebase のプライバシーとセキュリティ</a> ／ <a href="https://policies.google.com/privacy?hl=ja">Google プライバシーポリシー</a></td></tr>
 </table>
@@ -146,7 +157,7 @@
 
 <table>
   <tr><th>提供者</th><td>Google LLC</td></tr>
-  <tr><th>送信される情報</th><td>広告識別子（iOS: IDFA、Android: 広告 ID）、IP アドレス、端末の情報、広告の表示・タップに関する情報。</td></tr>
+  <tr><th>送信される情報</th><td>広告識別子（iOS: IDFA、Android: 広告 ID）、IP アドレスおよびそこから推定されるおおよその地域、端末の情報、広告の表示・タップに関する情報。端末で位置情報の利用を許可している場合は、位置に関する情報が広告の配信に利用されることがあります。</td></tr>
   <tr><th>利用目的</th><td>本アプリ内での広告の配信・表示、および広告の不正クリックの防止のため。</td></tr>
   <tr><th>利用者による制御</th><td>
     iOS では、アプリの初回起動時に OS の「トラッキングの許可を求める」ダイアログを表示します。
