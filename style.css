@@ -99,6 +99,8 @@ th, td {
   vertical-align: top;
 }
 
+td { overflow-wrap: anywhere; }
+
 th {
   background: var(--card);
   white-space: nowrap;
@@ -113,7 +115,7 @@ th {
   margin: 20px 0;
 }
 
-.note p:last-child { margin-bottom: 0; }
+.note > *:last-child { margin-bottom: 0; }
 
 footer {
   margin-top: 56px;
